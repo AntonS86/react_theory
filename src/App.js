@@ -6,13 +6,13 @@ import Car from './Car/Car';
 function App() {
     const divStyle = {
         textAlign: 'center',
-        color     : 'blue'
     };
     return (
-        <div className={App}>
-            <div style={divStyle}>
+        <div className={App} style={divStyle}>
+            <div >
                 <h1>Hello world</h1>
             </div>
+            <Car/>
             <Car/>
         </div>
     );
