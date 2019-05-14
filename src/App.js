@@ -8,7 +8,6 @@ class App extends React.Component {
     constructor(props) {
         super(props);
 
-
         this.state = {
             cars     : [
                 {name: 'Ford', year: 2018},
@@ -25,6 +24,12 @@ class App extends React.Component {
         });
     };
 
+    handleInput = (e) => {
+        this.setState({
+            pageTitle: e.target.value
+        });
+    };
+
     render() {
 
         const divStyle = {
@@ -36,6 +41,7 @@ class App extends React.Component {
         return (
             <div className="App" style={divStyle}>
                 <h1>{this.state.pageTitle}</h1>
+                <input type="text" name="" id="" onChange={this.handleInput}/>
                 <button onClick={this.changeTitleHandler.bind(this, 'Changed!')}>Change title</button>
                 <Car
                     name={cars[0].name}
