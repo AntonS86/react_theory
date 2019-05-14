@@ -5,17 +5,26 @@ import Car from './Car/Car';
 
 class App extends React.Component {
 
-    state = {
-        cars     : [
-            {name: 'Ford', year: 2018},
-            {name: 'Audi', year: 2016},
-            {name: 'Mazda', year: 2010},
-        ],
-        pageTitle: 'React Components'
-    };
+    constructor(props) {
+        super(props);
+
+
+        this.state = {
+            cars     : [
+                {name: 'Ford', year: 2018},
+                {name: 'Audi', year: 2016},
+                {name: 'Mazda', year: 2010},
+            ],
+            pageTitle: 'React Components'
+        };
+    }
 
     changeTitleHandler = () => {
-        console.log('click');
+        const oldTitle = this.state.pageTitle;
+        const newTitle = oldTitle + ' (changed)';
+        this.setState({
+            pageTitle: newTitle
+        });
     };
 
     render() {
