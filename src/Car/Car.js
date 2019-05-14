@@ -21,6 +21,5 @@ export default props => (
     <div>
         <p>Car name: {props.name}</p>
         <p>Year: <strong>{props.year}</strong></p>
-        {props.children}
     </div>
 );
