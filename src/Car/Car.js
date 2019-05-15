@@ -1,4 +1,5 @@
 import React from 'react';
+import './Car.css';
 /*function Car() {
     return (
         <h2>This is car Component</h2>
@@ -18,7 +19,7 @@ import React from 'react';
     </div>
 );*/
 export default props => (
-    <div className={'car-card'}>
+    <div className="car-card">
         <p>Car name: {props.name}</p>
         <p>Year: <strong>{props.year}</strong></p>
         <input type="text" onChange={props.onChangeName} value={props.name}/>
