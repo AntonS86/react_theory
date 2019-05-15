@@ -18,9 +18,10 @@ import React from 'react';
     </div>
 );*/
 export default props => (
-    <div>
+    <div className={'car-card'}>
         <p>Car name: {props.name}</p>
         <p>Year: <strong>{props.year}</strong></p>
-        <button onClick={props.onChangeTitle}>Click</button>
+        <input type="text" onChange={props.onChangeName} value={props.name}/>
+        <button onClick={props.onDelete}>Delete</button>
     </div>
 );
