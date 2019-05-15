@@ -32,3 +32,15 @@
     }
 }
 
+.AppButton {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    text-transform: uppercase;
+    outline: none;
+
+    &:hover {
+        background: #67cc52;
+    }
+}
+
