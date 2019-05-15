@@ -1,24 +1,9 @@
 import React from 'react';
+import Radium from 'radium';
 import './Car.css';
-/*function Car() {
-    return (
-        <h2>This is car Component</h2>
-    )
-}*/
 
-/*const car = () => {
-    return (
-        <h2>This is car Component</h2>
-    )
-}*/
 
-/*const car = () => (
-    <div>
-        This is car Component
-        <span>Test</span>
-    </div>
-);*/
-export default props => {
+const Car = props => {
     const inputClasses = ['input'];
     if (props.name !== '') {
         inputClasses.push('green');
@@ -29,8 +14,18 @@ export default props => {
     if (props.name.length > 4) {
         inputClasses.push('bold');
     }
+
+    const style = {
+        border   : '1px solid #ccc',
+        boxShadow: '0 4px 5px 0 rgba(0, 0, 0, .14)',
+        ':hover' : {
+            border   : '1px solid #aaa',
+            boxShadow: '0 4px 15px 0 rgba(0, 0, 0, .25)',
+            cursor   : 'pointer'
+        }
+    };
     return (
-        <div className="car-card">
+        <div className="car-card" style={style}>
             <p>Car name: {props.name}</p>
             <p>Year: <strong>{props.year}</strong></p>
             <input type="text"
@@ -41,4 +36,5 @@ export default props => {
             <button onClick={props.onDelete}>Delete</button>
         </div>
     )
-}
+};
+export default Radium(Car);
