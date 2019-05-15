@@ -64,7 +64,8 @@ class App extends React.Component {
 
         return (
             <div className="App" style={divStyle}>
-                <h1>{this.state.pageTitle}</h1>
+                {/*<h1>{this.state.pageTitle}</h1>*/}
+                <h1>{this.props.title}</h1>
                 <button className={'AppButton'} onClick={this.toggleCarsHandler}>Toggle Cars</button>
                 <div style={{
                     width  : 400,
