@@ -6,6 +6,17 @@ import './Car.scss';
 
 class Car extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.inputRef = React.createRef();
+    }
+
+    componentDidMount() {
+        if (this.props.index === 0) {
+            this.inputRef.current.focus();
+        }
+    }
+
     render() {
         console.log('Car render');
 
@@ -25,10 +36,12 @@ class Car extends React.Component {
             <React.Fragment>
                 <p>Car name: {this.props.name}</p>
                 <p>Year: <strong>{this.props.year}</strong></p>
-                <input type="text"
-                       onChange={this.props.onChangeName}
-                       value={this.props.name}
-                       className={inputClasses.join(' ')}
+                <input
+                    ref={this.inputRef}
+                    type="text"
+                    onChange={this.props.onChangeName}
+                    value={this.props.name}
+                    className={inputClasses.join(' ')}
                 />
                 <button onClick={this.props.onDelete}>Delete</button>
             </React.Fragment>
@@ -39,6 +52,7 @@ class Car extends React.Component {
 Car.propTypes = {
     name        : PropTypes.string.isRequired,
     year        : PropTypes.number,
+    index       : PropTypes.number,
     onChangeName: PropTypes.func,
     onDelete    : PropTypes.func,
 }
