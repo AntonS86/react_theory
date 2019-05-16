@@ -1,5 +1,6 @@
 import React from 'react';
 import withClass from '../hoc/withClass';
+import PropTypes from 'prop-types';
 import './Car.scss';
 
 
@@ -33,6 +34,13 @@ class Car extends React.Component {
             </React.Fragment>
         )
     }
+}
+
+Car.propTypes = {
+    name        : PropTypes.string.isRequired,
+    year        : PropTypes.number,
+    onChangeName: PropTypes.func,
+    onDelete    : PropTypes.func,
 }
 
 export default withClass(Car, 'car-card');
