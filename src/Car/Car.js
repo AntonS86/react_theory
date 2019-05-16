@@ -55,6 +55,6 @@ Car.propTypes = {
     index       : PropTypes.number,
     onChangeName: PropTypes.func,
     onDelete    : PropTypes.func,
-}
+};
 
 export default withClass(Car, 'car-card');
